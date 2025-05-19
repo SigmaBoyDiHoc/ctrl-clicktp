@@ -21,6 +21,12 @@ mouse.Button1Down:Connect(function()
         local character = player.Character
         if character and character:FindFirstChild("HumanoidRootPart") then
             character.HumanoidRootPart.CFrame = CFrame.new(mouse.Hit.p + Vector3.new(0, 3, 0))
+            -- Thông báo teleport
+            game.StarterGui:SetCore("SendNotification", {
+                Title = "Ctrl+Click TP";
+                Text = "Teleport đã được bật!";
+                Duration = 2;
+            })
         end
     end
 end)
